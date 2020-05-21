@@ -16,7 +16,8 @@ class PatientsController < ApplicationController
   # POST /patients
   def create
     @patient = Patient.new(patient_params)
-
+    puts patient_params
+    puts "-----------------------------------------"
     if @patient.save
       render json: @patient, status: :created, location: @patient
     else
